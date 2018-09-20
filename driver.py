@@ -42,6 +42,7 @@ def pruneRandomNodes():
 		innernodeIdList.append(inner.id)
 	random.shuffle(innernodeIdList)
 	#Take 1/10th of the total internal node ids
+	#Change variable 0.1 to prune different fraction of node. For example to prune 20% of internal node, change 0.1 to 0.2.
 	numOfNodesToPrune = int(math.ceil(0.1*(len(innernodeIdList))))
 	listOfPruneNodeId = innernodeIdList[:numOfNodesToPrune] 
 	#Do not prune node with IDs 0, 1, 2
@@ -66,7 +67,7 @@ print("********** Non-leaf nodes ****************")
 innerNodes = getInnerNodes(t, [])
 for inner in innerNodes:
     print("id = " + str(inner.id) + " depth =" + str(inner.depth))
-
+#0.2 is the current test ratio of the total data available. To train model on 0.5/0.5 test/train ratio, change 0.2 to 0.5.
 trainDF, testDF = model_selection.train_test_split(df, test_size=0.2)
 train = trainDF.values.tolist()
 test = testDF.values.tolist()
