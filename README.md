@@ -21,6 +21,10 @@ Prune the parent of leaf nodes.<br />
  Command to run the code:<br />
   -- python driver.py<br />
   -- For now the data is stored locally and read from iris.csv (put it in the same folder as driver.py)<br />
+  -- To change pruning factor, make changes to the factor 0.1 (currently hard-coded) in driver.py:<br />
+     numOfNodesToPrune = int(math.ceil(0.1*(len(innernodeIdList)))):<br />
+  -- To change test ratio, change test_size; currently hardcoded in driver.py:<br />
+     trainDF, testDF = model_selection.train_test_split(df, test_size=0.2)<br />
   -- To change the source of data make changes to the line:<br />
      df = pd.read_csv('iris.csv', sep=',') #driver.py<br />
   -- getLeafNodes/getInnerNodes require two parameters for the recursion to work as expected.<br />
