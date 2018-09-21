@@ -37,7 +37,7 @@ def pruneNodesAboveLeaf() :
 def pruneRandomNodes():
 	innernodeIdList = []
 	totalNodes = 0;
-	inneNodes = getInnerNodes(t_trained, [])
+	innerNodes = getInnerNodes(t_trained, [])
 	for inner in innerNodes:
 		innernodeIdList.append(inner.id)
 	random.shuffle(innernodeIdList)
